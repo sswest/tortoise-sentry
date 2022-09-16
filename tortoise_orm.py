@@ -51,11 +51,11 @@ class TortoiseIntegration(Integration):
         patch_queryset()
 
         for client in find_db_client():
-            patch_db_client(client, "execute_query", "query")
-            patch_db_client(client, "execute_query_dict", "query_dict")
+            patch_db_client(client, "execute_query", "execute")
+            patch_db_client(client, "execute_query_dict", "execute_dict")
             patch_db_client(client, "execute_insert", "insert")
             patch_db_client(client, "execute_script", "script")
-            patch_db_client(client, "execute_many", "many")
+            patch_db_client(client, "execute_many", "many_execute")
 
 
 def patch_queryset():
